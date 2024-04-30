@@ -2,13 +2,8 @@ pipeline {
 	agent any 
 	
 	parameters {
-  		string defaultValue: 'QA', name: 'ENV'
-	}
-	
-	triggers {
-  		pollSCM '* * * * *'
-	}
-	
+		choice(name: 'ENV', choices: ['QA','UAT'], description: 'Pick Environment value')
+	}	
 	stages {
 	    stage('Checkout') {
 	        steps {
