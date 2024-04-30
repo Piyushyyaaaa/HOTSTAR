@@ -25,10 +25,9 @@ pipeline {
         	sh 'cp target/HOTSTAR.war /home/piyush/Extracted/apache-tomcat-9.0.88/webapps'
         	echo "deployment has been COMPLETED on QA!"
 			 }
-			else ( env.ENV == 'UAT' ){
+			else if ( env.ENV == 'UAT' ){
     		sh 'cp target/HOTSTAR.war /home/piyush/Extracted/apache-tomcat-9.0.88/webapps'
     		echo "deployment has been done on UAT!"
-slackSend channel: 'devops-slack', color: 'good', message: 'welcome to jenkins', teamDomain: 'devops', tokenCredentialId: '8e9fe88a-9e41-49a3-b318-76db094f5cc0'
 			}
 			}}}	
 }}
