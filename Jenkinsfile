@@ -26,6 +26,6 @@ pipeline {
 			}}}}
 		stage( 'Slack' ) {
 		    steps {
-			slackSend baseUrl: 'https://hooks.slack.com/services/', channel: 'devops-slack', color: 'good', message: 'welcome to jenkins', teamDomain: 'hotstar-co', tokenCredentialId: '8e9fe88a-9e41-49a3-b318-76db094f5cc0'
+			slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#devops-slack', color: 'Good', message: 'welcome to jenkins', notifyCommitters: true, teamDomain: 'HOTSTAR', tokenCredentialId: '8e9fe88a-9e41-49a3-b318-76db094f5cc0'
 }}	
 }}
